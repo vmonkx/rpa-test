@@ -41,9 +41,16 @@ export default function Home() {
     getLink(reqObj);
   };
 
+  let axiosConfig = {
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+      "Access-Control-Allow-Origin": "*",
+    },
+  };
+
   const getLink = async (req) => {
     const res = await axios
-      .post(process.env.NEXT_PUBLIC_GET_LINK, JSON.stringify(req))
+      .post("/api", JSON.stringify(req), axiosConfig)
       .then((res) => {
         console.log("RESPONSE", res);
         setSuccessText(res.data?.url);
