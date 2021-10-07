@@ -12,9 +12,6 @@ module.exports = async function (req, res) {
     })
     .catch(
       (err) =>
-        console.log(
-          "err",
-          err
-        ) /* res.status(err.response.status).send(err.response.data) */
+        res.status(err.response.status).send(err.response.data)
     );
 };

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+
 import { useState } from "react";
 import { Col, Container, Row, Form, Button, Alert } from "react-bootstrap";
 
@@ -37,7 +37,7 @@ export default function Home() {
     reqObj[obrGroup] = groupInfo;
 
     console.log("SUBMIT", JSON.stringify(reqObj));
-    console.log("env", process.env.NEXT_PUBLIC_GET_LINK);
+    
     getLink(reqObj);
   };
 
@@ -60,7 +60,7 @@ export default function Home() {
         console.log("EE", e.response);
         setErrorText(e.response?.data?.msg);
       });
-    console.log("RES", res);
+    
   };
 
   const handleChangeBaseInfo = (e) => {
