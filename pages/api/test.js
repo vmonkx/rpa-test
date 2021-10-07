@@ -18,5 +18,5 @@ module.exports = async function (req, res) {
           );
       }
     })
-    .catch((err) => console.log("err", err));
+    .catch((err) => res.status(err.response.status).send(err.response.data));
 };

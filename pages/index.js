@@ -50,14 +50,14 @@ export default function Home() {
 
   const getLink = async (req) => {
     const res = await axios
-      .post("/api", JSON.stringify(req), axiosConfig)
+      .post("/api/test", JSON.stringify(req), axiosConfig)
       .then((res) => {
         console.log("RESPONSE", res);
         setSuccessText(res.data?.url);
       })
 
       .catch((e) => {
-        console.log("EE", e);
+        console.log("EE", e.response);
         setErrorText(e.response?.data?.msg);
       });
     console.log("RES", res);
