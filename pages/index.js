@@ -105,7 +105,7 @@ export default function Home() {
               <Alert variant="danger">{`Произошла ошибка: ${errorText}`}</Alert>
             )}
           </Row>
-          <Row>
+          <Row className="mb-3">
             <Col>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">

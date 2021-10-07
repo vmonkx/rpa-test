@@ -8,15 +8,13 @@ module.exports = async function (req, res) {
       },
     })
     .then((response) => {
-      if (response.status === 200) {
-        res.status(200).send(response);
-      } else {
-        res
-          .status(400)
-          .send(
-            "Что то пошло не так, попробуйте еще раз или позвоните нам по телефону"
-          );
-      }
+      res.status(response.status).send(response.data);
     })
-    .catch((err) => res.status(err.response.status).send(err.response.data));
+    .catch(
+      (err) =>
+        console.log(
+          "err",
+          err
+        ) /* res.status(err.response.status).send(err.response.data) */
+    );
 };
