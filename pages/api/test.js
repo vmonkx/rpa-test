@@ -1,7 +1,4 @@
-
-
-
-const { default: axios } = require("axios")
+const { default: axios } = require("axios");
 
 module.exports = async function (req, res) {
   await axios
@@ -10,15 +7,16 @@ module.exports = async function (req, res) {
         "Content-Type": "application/json",
       },
     })
-    .then(response => {
+    .then((response) => {
       if (response.status === 200) {
-        res.status(200).send(response)
+        res.status(200).send(response);
       } else {
         res
           .status(400)
           .send(
             "Что то пошло не так, попробуйте еще раз или позвоните нам по телефону"
-          )
+          );
       }
     })
-    .catch(err => console.log("err", err))
+    .catch((err) => console.log("err", err));
+};
